@@ -1,0 +1,51 @@
+:root {
+  --color-primary: #c6c86c;
+  --color-secondary: #a09574;
+  --color-tertiary: #e7efcd;
+
+  --color-primary-darker: #7e8925;
+  --color-secondary-darker: #483c1f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color-tertiary);
+  background-color: var(--color-primary);
+  font-family: "Quicksand", sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 54pt;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.des {
+  font-weight: 700;
+  font-size: 23pt;
+  padding: 1rem;
+  width: 100%;
+}
+
+.tasks {
+  overflow: scroll;
+  border-radius: 1rem;
+  background-color: var(--color-primary-darker);
+}
+.task--set {
+  color: var(--color-primary-darker);
+}
