@@ -22,6 +22,7 @@
       </div>
       <div class="menu">
         <span class="material-icons md-48 tertiary" id="add">add</span>
+        <span class="material-icons md-48 tertiary" id="add">menu</span>
       </div>
     </nav>
     <main>
@@ -30,18 +31,34 @@
       </div>
       <div class="tasks">
         <div class="task-row">
-          <div class="task-title">Task 1</div>
+          <div class="task-title">Task - 1</div>
           <div class="task-description">
             This is something I need to complete.
           </div>
         </div>
         <div class="task-row">
-          <div class="task-title">Task 2</div>
+          <div class="task-title">Task - 2</div>
           <div class="task-description">
             This is something else I need to complete.
           </div>
         </div>
       </div>
     </main>
+
+    <!-- Modal window for collecting user input -->
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Add a task!
+      </h2>
+      <form class="modal__form">
+        <label>Task title</label>
+        <input type="text" class="form__task-title" />
+        <label>Description</label>
+        <input type="text" class="form__task-description" />
+        <button class="form__btn-submit">Next step &rarr;</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
   </body>
 </html>
