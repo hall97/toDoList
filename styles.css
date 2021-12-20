@@ -1,9 +1,6 @@
 :root {
   --color-primary: #444444;
   --color-secondary: #e7efcd;
-
-  --color-primary-darker: #7e8925;
-  --color-secondary-darker: #483c1f;
 }
 
 * {
@@ -25,23 +22,27 @@ body {
 }
 
 nav {
-  display: grid;
+  margin-top: 2rem;
+  display: flex;
   align-items: center;
-  justify-content: space-around;
-  grid-template:
-    '. a b'
-    'c c d';
+  justify-content: space-between;
+}
+
+.btn__clear-tasks {
+  margin-left: 3rem;
+  font-size: 28pt;
+  font-weight: 300;
 }
 
 .title {
-  grid-area: a;
+  /* justify-self: center; */
   font-weight: 300;
   font-size: 54pt;
 }
 
 .menu {
-  grid-area: b;
-  margin-left: 50%;
+  /* margin-left: 50%; */
+  margin-right: 3rem;
   display: flex;
 }
 
@@ -55,6 +56,8 @@ main {
 }
 
 .des {
+  display: flex;
+  justify-content: center;
   font-weight: 700;
   font-size: 23pt;
   padding: 1rem;
@@ -80,21 +83,22 @@ main {
 }
 
 .task-title {
+  font-size: 18pt;
   display: flex;
-  justify-content: center;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  justify-content: space-between;
+  padding: 0.5rem;
 }
 
 .task-description {
+  font-size: 14pt;
   display: flex;
   justify-content: flex-start;
   padding: 0 0.5rem 0.5rem 0.5rem;
 }
 
-.task--set {
+/* .task--set {
   color: var(--color-primary-darker);
-}
+} */
 
 .material-icons.md-48.tertiary {
   font-size: 48px;
