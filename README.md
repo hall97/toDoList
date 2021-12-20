@@ -7,3 +7,5 @@ Currently a work in progress. So far you can:
 - Close the page without losing your tasks when you reopen (local storage stores tasks).
 - Mark tasks as completed or not with the circle button on each task.
 - Clear all tasks from the current session & local storage with the 'Clear All Tasks' button.
+
+Available [here](https://hall97.github.io/toDoList/).
