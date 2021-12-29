@@ -61,7 +61,7 @@ class App {
     this._getTasksFromLocal();
 
     // Clear all tasks from _task array and local storage
-    btnClear.addEventListener('click', this._clear);
+    btnClear.addEventListener('click', this._clear.bind(this));
   }
 
   // Function to show the modal input window
@@ -127,9 +127,11 @@ class App {
     if (!tickCircle) return;
     // Get the id of the parent element. This is the key assigned to each task object.
     const taskKey = tickCircle.parentElement.id;
+    console.log(this._tasks);
     // Find the task in _tasks array with that key value.
     const task = this._tasks.find(task => task.key === taskKey);
     // Toggle the completed value.
+    console.log(this._tasks);
     task.complete = !task.complete;
     // Re-render the task list to show the changed completed mark.
     taskList.innerHTML = '';
@@ -141,6 +143,7 @@ class App {
   // Clear all tasks from _tasks array and local storage
   _clear() {
     this._tasks = [];
+    console.log(this._tasks);
     localStorage.removeItem('tasks');
     taskList.innerHTML = '';
   }
