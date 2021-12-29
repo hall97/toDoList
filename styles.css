@@ -1,5 +1,6 @@
 :root {
   --color-primary: #444444;
+  --color-primary-darker: #363333;
   --color-secondary: #e7efcd;
 }
 
@@ -96,13 +97,40 @@ main {
   padding: 0 0.5rem 0.5rem 0.5rem;
 }
 
-/* .task--set {
-  color: var(--color-primary-darker);
-} */
-
 .material-icons.md-48.tertiary {
   font-size: 48px;
   color: var(--color-secondary);
+}
+
+.options {
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  position: absolute;
+  right: 2.5rem;
+  margin-top: 3.5rem;
+  z-index: 10;
+  width: 20%;
+  background-color: var(--color-primary);
+  box-shadow: 0 0.8rem 5rem 2rem var(--color-primary-darker);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s 0.2s;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 16pt;
+  margin-bottom: 10pt;
+}
+
+/* Show options on mouse hover */
+.options:hover,
+#menu:hover + .options {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* -------------------------- */

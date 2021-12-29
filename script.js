@@ -9,6 +9,9 @@ const formTaskDescription = document.querySelector('.form__task-description');
 const form = document.querySelector('.modal__form');
 const taskList = document.querySelector('.tasks');
 const btnClear = document.querySelector('.btn__clear-tasks');
+const toDoDisp = document.querySelector('#td');
+const completedDisp = document.querySelector('#comp');
+const allDisp = document.querySelector('#all');
 
 // load tasks from browser and display
 
@@ -62,7 +65,38 @@ class App {
 
     // Clear all tasks from _task array and local storage
     btnClear.addEventListener('click', this._clear.bind(this));
+
+    // Display to do tasks
+    toDoDisp.addEventListener('click', this._toDoDisp.bind(this));
+
+    // Display completed tasks
+    completedDisp.addEventListener('click', this._compDisp.bind(this));
+
+    // Display all tasks
+    allDisp.addEventListener('click', this._allDisp.bind(this));
   }
+
+  ///////////////////// REFACTOR \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  // Show only to do tasks
+  _toDoDisp() {
+    const toDo = this._tasks.filter(task => !task.complete);
+    taskList.innerHTML = '';
+    toDo.forEach(task => this._renderTask(task));
+  }
+
+  // Show only completed tasks
+  _compDisp() {
+    const done = this._tasks.filter(task => task.complete);
+    taskList.innerHTML = '';
+    done.forEach(task => this._renderTask(task));
+  }
+
+  // Show all tasks
+  _allDisp() {
+    taskList.innerHTML = '';
+    this._tasks.forEach(task => this._renderTask(task));
+  }
+  ///////////////////// REFACTOR END \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
   // Function to show the modal input window
   _showModal(e) {
@@ -127,11 +161,9 @@ class App {
     if (!tickCircle) return;
     // Get the id of the parent element. This is the key assigned to each task object.
     const taskKey = tickCircle.parentElement.id;
-    console.log(this._tasks);
     // Find the task in _tasks array with that key value.
     const task = this._tasks.find(task => task.key === taskKey);
     // Toggle the completed value.
-    console.log(this._tasks);
     task.complete = !task.complete;
     // Re-render the task list to show the changed completed mark.
     taskList.innerHTML = '';
